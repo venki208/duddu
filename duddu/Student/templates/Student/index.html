@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Application</title>
+</head>
+<body>
+	<h1>This is my first html</h1>
+	<p>my questions are:</p>
+	<p>{{ result }}</p>
+	{% if result %}
+		{% for qu in question %}
+			<p><a href="/student/{{qu.id}}/vote/">{{qu.question_text}}</a></p>
+		{% endfor %}
+		
+	{% endif %}
+	<form action="" method="post">
+	{% csrf_token %}
+	{% for choice in question.choice_set.all %}
+	    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+	{% endfor %}
+	<input type="submit" value="Vote" />
+</form>
+</body>
+</html>
