@@ -31,14 +31,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django Default Applications
     'django.contrib.admin', # for Admin site
     'django.contrib.auth', # for authentication system
-    'django.contrib.contenttypes',# reusal collection of metadata,workflow,behavior
+    'django.contrib.contenttypes', # reusal collection of metadata,workflow,behavior
     'django.contrib.sessions', # for maintaining sessions
     'django.contrib.messages', # for Creating messages
     'django.contrib.staticfiles', # for Managing the Static files
     # Created Applications
     'Student',
+    'login',
+    'user_signup',
 ]
     
 MIDDLEWARE = [
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'login.middleware.LoginRequiredMiddleware'
 ]
 
 ROOT_URLCONF = 'duddu.urls'
@@ -56,7 +60,7 @@ ROOT_URLCONF = 'duddu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +131,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+
+LOGIN_EXEMPT_URLS = (
+    # allow any URL under /legal/*
+) 
