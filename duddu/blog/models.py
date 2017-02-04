@@ -18,5 +18,5 @@ class Author(models.Model):
 		return self.name
 
 class Entry(models.Model):
-	blog = models.ForignKey(Blog)
+	blog = models.ForeignKey(Blog)
 	headline = models.CharField(max_length = 255)
