@@ -1,0 +1,27 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="{% static 'bower_components/angular-material/angular-material.min.css' %}">
+</head>
+<body ng-app="main_app">
+	<header>
+		
+	</header>
+	<p>Hi venki</p>
+	<footer>
+		
+	</footer>
+	<script src="{% static 'bower_components/angular/angular.min.js' %}"></script>
+	<script src="{% static 'bower_components/angular-animate/angular-animate.js' %}"></script>
+	<script src="{% static 'bower_components/angular-aria/angular-aria.min.js' %}"></script>
+	<script src="{% static 'bower_components/angular-material/angular-material.min.js' %}"></script>
+	<script src="{% static 'bower_components/angular-messages/angular-messages.js' %}"></script>
+	<script type="text/javascript">
+		angular
+			.module('main_app', ['ngMaterial']);
+	</script>
+</body>
+</html>
