@@ -1,1 +1,3 @@
+# used for not pushing the pyc file
 
+*.pyc
