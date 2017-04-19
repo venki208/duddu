@@ -6,6 +6,11 @@
 	<title>Signup</title>
 </head>
 <body>
-	<p>Please signup here.</p>
+	<form action = '/user_signup/' method='POST'>
+		{% csrf_token %}
+		Email<input type="email" name="email_id"><br />
+		password<input type="password" name="password">
+		<input type="submit" name="submit">submit
+	</form>
 </body>
 </html>
