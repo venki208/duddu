@@ -1,0 +1,17 @@
+Flask:
+	Flask depends on two external libreries 
+	1. Jinja 2.Werkzeug WSGI toolkit
+
+Flask is micro framework
+micro means
+-----------
+1. it is not that whole application is going to write in single file not does't mean that lacking in functionality
+2. it keeps the core simple but extensible.
+3. it won't make many descisons for u like what database to use, what login mechanisam to use etc...
+4. it will make only one descison that is template engine (that to it can be very easy to change)
+5. by default flask doesn't have the database abstratction layer, form validation or anything else where different libreries existing to handle that. instead of keeping all those things defaultly with framework it will support extensions for you to maintain such kind of functionaloties.
+
+Q)Why is this the case? Because people have different preferences and requirements and Flask could not meet those if it would force any of this into the core. The majority of web applications will need a template engine in some sort. However not every application needs a SQL database.
+ans:The idea of Flask is to build a good foundation for all applications. Everything else is up to you or extensions.
+
+
